@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27004.2010
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskPerson", "TaskPerson\TaskPerson.csproj", "{DCEEF1CD-2AE5-4FD8-9BC1-861FD534B8B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Book task", "Book task\Book task.csproj", "{A1D7002A-E4F6-43DF-BC49-8CADDF6675D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookTask", "Book task\BookTask.csproj", "{A1D7002A-E4F6-43DF-BC49-8CADDF6675D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
