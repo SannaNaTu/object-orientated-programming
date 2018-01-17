@@ -8,20 +8,37 @@ namespace TaskCar
     class Car
     {
         public string Brand;
-        public double Speed;
+        public int Speed;
     }
-    public Car()
+    public void AskData()
     {
-        Brand = "";
-        Speed = "";
+        Console.Write("Auton malli: ");
+        Brand = Console.ReadLine();
+        Console.Write("Auton nopeus: ");
+        Speed = int.Parse(Console.ReadLine());
     }
-    public Car(string brand, double speed)
-    {
-        brand = brand;
-        speed = speed;
-    }
+    //public Car()
+    //{
+    //    Brand = "";
+    //    Speed = "";
+    //}
+    //public Car(string brand, double speed)
+    //{
+    //    brand = brand;
+    //    speed = speed;
+    //}
     public void ShowCarInfo()
     {
         Console.WriteLine($"Merkki: {Brand}\nNopeus: {Speed}");
+    }
+    public void Accelerate(int speed)
+    {
+        if (speed >= 0)
+            Speed += speed;
+    }
+
+    public void Brake()
+    {
+        Speed = Speed * 0.9;
     }
 }
