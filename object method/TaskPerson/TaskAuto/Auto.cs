@@ -10,6 +10,11 @@ namespace TaskCar
         public string Brand;
         public int Speed;
     }
+    //public Car(string brand, int speed)
+    //{
+    //    Brand = brand;
+    //    Speed = speed;
+    //}
     public void AskData()
     {
         Console.Write("Auton malli: ");
@@ -17,16 +22,7 @@ namespace TaskCar
         Console.Write("Auton nopeus: ");
         Speed = int.Parse(Console.ReadLine());
     }
-    //public Car()
-    //{
-    //    Brand = "";
-    //    Speed = "";
-    //}
-    //public Car(string brand, double speed)
-    //{
-    //    brand = brand;
-    //    speed = speed;
-    //}
+
     public void ShowCarInfo()
     {
         Console.WriteLine($"Merkki: {Brand}\nNopeus: {Speed}");

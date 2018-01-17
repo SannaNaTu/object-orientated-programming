@@ -7,8 +7,15 @@ namespace TaskCar
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Anna merkki ja nopeus");
-            Car car = new Car();
+            Car carA = new Car();
+            carA.AskData();
+            //Console.WriteLine();
+            carA.ShowCarInfo();
+
+            carA.Accelerate();
+
+            carA.Break();
+
             Console.ReadKey();
         }
     }
