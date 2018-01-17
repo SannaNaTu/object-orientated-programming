@@ -4,18 +4,17 @@ using System.Text;
 
 namespace BookTask
 {
-    // Luokka = class, nimi kirjoitetaan aina Isolla
+    // Luokka = class, nimi kirjoitetaan aina Isolla,määrittelee olion tietorakenteen (mm. metodit, attribuutit, kentät)
     class Book
     {
         //Fields  (kirjassa attribuutit,olioiden ominaisuuksia, jäsenmuuttujat)
-        // public, näkyy kaikille / private, näkyy vain luokassa
-        // jäsenmuuttujat  ja jäsenfunktiot 
+        // public, näkyy kaikille / private, näkyy vain luokassa, muut :protected, internal, protected internal
         public string Title;
         public string Author;
         public int Id;
         public double Price;
 
-        //Constuctor =muodostin, muuttujille arvot
+        //Constuctor =muodostin, jäsenmuuttujille arvot,ei palauta mitään arvoa eikä sille voida määritellä mitään paluuarvon tyyppiä
         public Book()
         {
             Title = "Thinking in Java";
@@ -31,15 +30,14 @@ namespace BookTask
             Price = price;
 
         }
-        //Methods ( olioiden toiminnat, tehtävät, käyttötarkoitukset)
+        //Methods ( olioiden toiminnat, tehtävät, käyttötarkoitukset, jäsenfunktiot)
         public void PrintBookInfo()
         {
-            Console.WriteLine($"Nimi: {Title}\nKirjoittaja: {Author}\nId-numero: {Id}\nHinta: {Price}€");
+            Console.WriteLine($"Nimi: {Title}\nKirjoittaja: {Author}\nId-numero: {Id}\nHinta: {Price}€"); //miksi ei ohjelma tulosta nollia? 
         }
-        //    //this. = operaattori viittaa käsittelyssä olevaan olioon eli siihen, jonka metodeja käytetään
-        //}
+        //this. = operaattori viittaa käsittelyssä olevaan olioon eli siihen, jonka metodeja käytetään
 
-            // Tämä Jounin mallista
+        // Tämä Jounin mallista
         public string CompareBook(Book book)
         {
             if (this.Price > book.Price)
@@ -48,7 +46,7 @@ namespace BookTask
                 return $"{book.Title} on kalliimpi kuin {this.Title} kirja";
             else
                 return $"Hinnat ovat yhtä suuret";
-
-}
+        }
     }
 }
+
