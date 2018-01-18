@@ -8,13 +8,13 @@ namespace BookTask
     class Book
     {
         //Fields  (kirjassa attribuutit,olioiden ominaisuuksia, jäsenmuuttujat)
-        // public, näkyy kaikille / private, näkyy vain luokassa, muut :protected, internal, protected internal
+        // public, näkyy kaikille, Kirjota Isolla/ private, näkyy vain luokassa, Kirjota _eteen, muut :protected, internal, protected internal
         public string Title;
         public string Author;
         public int Id;
         public double Price;
 
-        //Constuctor =muodostin, jäsenmuuttujille arvot,ei palauta mitään arvoa eikä sille voida määritellä mitään paluuarvon tyyppiä
+        //Constuctor =muodostin, asetetaan jäsenmuuttujille arvot,ei palauta mitään arvoa eikä sille voida määritellä mitään paluuarvon tyyppiä
         public Book()
         {
             Title = "Thinking in Java";
@@ -30,10 +30,10 @@ namespace BookTask
             Price = price;
 
         }
-        //Methods ( olioiden toiminnat, tehtävät, käyttötarkoitukset, jäsenfunktiot)
+        //Methods ( olioiden toiminnat, tehtävät, käyttötarkoitukset, jäsenfunktiot, kirjoitetaan Isolla)
         public void PrintBookInfo()
         {
-            Console.WriteLine($"Nimi: {Title}\nKirjoittaja: {Author}\nId-numero: {Id}\nHinta: {Price}€"); //miksi ei ohjelma tulosta nollia? 
+            Console.WriteLine($"Nimi: {Title}\nKirjoittaja: {Author}\nId-numero: {Id}\nHinta: {Price:F}€"); //miksi ei ohjelma tulosta nollia? 
         }
         //this. = operaattori viittaa käsittelyssä olevaan olioon eli siihen, jonka metodeja käytetään
 
