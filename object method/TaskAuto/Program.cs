@@ -12,9 +12,9 @@ namespace TaskCar
             //Console.WriteLine();
             carA.ShowCarInfo();
 
-            carA.Accelerate();
+            carA.Accelerate(10);
 
-            carA.Break();
+            carA.Brake();
 
             Console.ReadKey();
         }
