@@ -5,7 +5,7 @@ namespace BookTask
     class Program
 
     {
-        //Sanna kotsassa ihmettelee. Vähän sekava kun mukana muistiinpanoja!
+        //Vähän sekava kun mukana muistiinpanoja!
         static void Main(string[] args)
         {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
