@@ -12,8 +12,8 @@ namespace TaskCompany
             Company company1 = new Company(company);
             Company company2 = new Company("Iso Firma", "Isokatu", "-", 1000000, 1000000);
             Company company3 = new Company(company2);
-            company3.Income = 640000;
-            company3.Expense = 320000;
+            company3.Income = 110000;
+            company3.Expense = 50000;
 
             company.PrintCompanyInfo();
             Console.WriteLine(company.Profit(company));

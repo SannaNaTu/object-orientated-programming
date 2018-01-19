@@ -57,7 +57,7 @@ namespace TaskCompany
             {
                 return "Yhtiöllä menee kehnosti!\n";
             }
-            else if (profit > 100 && profit < 300) // Miksi ei tämä osio tulostu! 
+            else if (profit > 100 && profit < 300) //yli ja alle 
             {
                 return "Yhtiöllä menee ihan ok!\n";
             }
