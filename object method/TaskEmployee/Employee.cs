@@ -10,10 +10,10 @@ namespace TaskEmployee
         public string Name;
         public int Id;
         public string Position;
-        public int Salary; 
+        public double Salary; 
 
         //Constuctor =muodostin
-        public Employee(string name, int id, string position, int salary)
+        public Employee(string name, int id, string position, double salary)
         {
             Name = name;
             Position = position;
@@ -30,7 +30,7 @@ namespace TaskEmployee
             }
         public void PrintEmployeeInfo()
         {
-            Console.WriteLine($"Nimi: {Name}\nTunnus: {Id}\nAsema: {Position}\nPalkka: {Salary}\n"); //En saa €-toimimaan, ei double/int C/F:
+            Console.WriteLine($"Nimi: {Name}\nTunnus: {Id}\nAsema: {Position}\nPalkka: {Salary:F}€\n"); //En saa €-toimimaan, ei double/int C/F:
         }
     }
 
