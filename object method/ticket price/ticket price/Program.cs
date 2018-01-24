@@ -11,6 +11,7 @@ namespace TicketPrice
             Ticket ticket = new Ticket();
             ticket.AskInfo();
             ticket.TicketPrice();
+            Console.WriteLine("Kiitos, osallistumisesta!");
             Console.ReadKey();
 
         }
