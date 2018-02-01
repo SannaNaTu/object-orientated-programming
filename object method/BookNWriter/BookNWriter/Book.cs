@@ -8,40 +8,101 @@ namespace BookNWriter
     {
         //Fields, atribuutit, ( privaatit siksi _-viiva)
         string _name;
-        string _author;
+        readonly string _author;
         double _price;
 
         static string _bookTheme;
 
+        public string Name { get => _name; set => _name = value; }
+        public static string BookTheme { get => _bookTheme; set => _bookTheme = value; }
+        public double Price
+        {
+            get => _price;
+
+            set
+            {
+                _price = value;
+                if (value >= 30)
+                {
+                    _price *= 0.9; // 10% discount 
+                }
+            }
+        }
+
         //Muodostin
         public Book()
         {
-            _name = "Kirja 1";
+            Name = "Kirja 1";
             _author= "Kirjamies Kimmo";
-            _price = 10;
-            _bookTheme = "Fantasia";
+            Price = 10;
+            BookTheme = "Fantasia";
         }
         public Book(string name, string author, double price, string bookTheme)
         {
-            _name = name;
+            Name = name;
             _author = author;
-            _price = price;
-            _bookTheme = bookTheme;
+            Price = price;
+            BookTheme = bookTheme;
         }
         //Metodit
-        public void GetBook()
-        {
-         
+        public string GetBook(Book book)
 
-        }
-        public void ChangeBookTheme()
         {
 
+            return $"------------------\n" +
+                   $"Kirja: {Name}\n" +            
+                   $"Hinta: {Price}\n" +
+                   $"Teema: {BookTheme}\n";
+
         }
-        public void GetInfo()
+        public string GetBook()
         {
-            Console.WriteLine($"Nimi: {_name}\nKirjoittaja: {_author}\nHinta: {_price:F}€\nTeema:{_bookTheme}");
+            return $"------------------\n" +
+                   $"Kirja: {Name}\n" +
+                   $"Hinta: {Price}\n" +
+                   $"Teema: {BookTheme}\n";
         }
+        public string CompareBook(string theme)
+        {
+            if (theme == Name)
+                return $"{theme} Löytyy valikoimasta!";
+            else 
+                    return $"{theme} Ei löydy valikoimasta!";
+
+        }
+        
 
     }
+
+    class Author // Uusi luokka 
+    {
+        string _name;
+        string _bday;
+        Book bookXXX;
+
+
+        public Author(string name, string bday, Book book)
+        {
+            _name = name;
+            _bday = bday;
+            bookXXX = book;
+
+        }
+        public Author()
+        {
+            _name = "Kirja Maija";
+            _bday = "01.05.1500";
+            bookXXX = new Book();
+
+        }
+        public string AuthorInfo()
+        {
+            return $"Nimi: {_name}" +
+                $" ja syntymäpäivä: {_bday}\n" +
+                $"Kirjopittanut kirjan:\n {bookXXX.GetBook()}";
+        }
+
+
+    }
+
 }
