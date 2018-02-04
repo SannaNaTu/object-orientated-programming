@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BookNWriter
 {
-    namespace Kirjallisuus
+    namespace Literature
     {
 
 
@@ -36,7 +36,7 @@ namespace BookNWriter
             //Muodostin
             public Book()
             {
-                Name = "Kirja 1";
+                Name = "The Kirja";
                 _author = "Kirjamies Kimmo";
                 Price = 10;
                 BookTheme = "Fantasia";
@@ -53,25 +53,29 @@ namespace BookNWriter
 
             {
 
-                return $"------------------\n" +
+                return 
                        $"Kirja: {Name}\n" +
-                       $"Hinta: {Price}\n" +
+                       $"Hinta: {Price}€\n" +
                        $"Teema: {BookTheme}\n";
 
             }
             public string GetBook()
             {
-                return $"------------------\n" +
+                return 
                        $"Kirja: {Name}\n" +
-                       $"Hinta: {Price}\n" +
+                       $"Hinta: {Price}€\n" +
                        $"Teema: {BookTheme}\n";
             }
             public string CompareBook(string theme)
             {
                 if (theme == Name)
-                    return $"{theme} Löytyy valikoimasta!";
+                    return $"{theme}: Löytyy valikoimasta!\n" +
+                        $"===================\n";
+
                 else
-                    return $"{theme} Ei löydy valikoimasta!";
+                    return $"{theme}: Ei löydy valikoimasta!\n" +
+                        $"===================\n";
+                      
 
             }
 
@@ -80,36 +84,39 @@ namespace BookNWriter
 
 
 
-
-        class Author // Uusi luokka 
-        {
+    }
+        class Author // Uusi luokka , nimiavaruuden Literature ulkopuolella
+    {
             string _name;
-            string _bday;
-            Book bookXXX;
+            string _birthday;
+            Literature.Book bookOne;
 
 
-            public Author(string name, string bday, Book book)
+            public Author(string name, string birthday, Literature.Book book)
             {
                 _name = name;
-                _bday = bday;
-                bookXXX = book;
+                _birthday = birthday;
+                bookOne = book;
 
             }
             public Author()
             {
                 _name = "Kirja Maija";
-                _bday = "01.05.1500";
-                bookXXX = new Book();
+                _birthday = "01.05.1500";
+                bookOne = new Literature.Book();
 
             }
             public string AuthorInfo()
             {
-                return $"Nimi: {_name}" +
-                    $" ja syntymäpäivä: {_bday}\n" +
-                    $"Kirjopittanut kirjan:\n {bookXXX.GetBook()}";
+            return
+                $"Kirjailijan nimi: {_name}\n" +
+                $"Syntymäpäivä: {_birthday}\n" +
+                $"- - - - - - - - - -\n" +
+                $"Kirjoittanut kirjan:\n{bookOne.GetBook()}"+
+                $"===================\n";
             }
 
 
         }
-    } 
+     
 }

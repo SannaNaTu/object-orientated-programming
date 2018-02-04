@@ -8,25 +8,24 @@ namespace BookNWriter
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
-            Kirjallisuus.Book book = new Kirjallisuus.Book();
-            Kirjallisuus.Book.BookTheme = "xx";
+            Literature.Book book = new Literature.Book(); // Uusi kirja 
+            Literature.Book.BookTheme = "Scifi";  // Testataan uuden teeman antoa
             Console.WriteLine(book.GetBook(book));
-            Console.WriteLine(book.CompareBook("Kirja 1"));
+            Console.WriteLine(book.CompareBook("The Kirja")); // Verrataan nimiä
 
-            Kirjallisuus.Book book2 = new Kirjallisuus.Book("Testikirja", "Tellu",32,"Kauhu");
+            Literature.Book book2 = new Literature.Book("Tylsät seikkailut", "Tellu tampio",32,"Kauhu"); //Luodaan uusi kirja uusilla tiedoilla
             Console.WriteLine(book2.GetBook(book));
-            book2.Name = "Uusnimi";
-            Kirjallisuus.Book.BookTheme = "Seikkailu";
-            Console.WriteLine(book2.CompareBook("Uusnimi"));
+            book2.Name = "Suuret Seikkailut"; // Annetaan uudelle kirjalle uusi nimi
+            Literature.Book.BookTheme = "Seikkailu"; // Vaihdetaan teema
+            Console.WriteLine(book2.CompareBook("Suuret Sikailut")); //Verrataan nimiä
 
-            Kirjallisuus.Author KirjailijaArttu = new Kirjallisuus.Author("Arttu", "2.3.1978", book2);
-            Kirjallisuus.Author Kirjailija1 = new Kirjallisuus.Author("Testi", "päivä", new Kirjallisuus.Book("testi","tatti",55,"kauhu"));
-            Console.WriteLine(KirjailijaArttu.AuthorInfo());
-            Console.WriteLine(Kirjailija1.AuthorInfo());
+            Author Author1 = new Author("Arttu Jalomies", "2.3.1978", book2);
+            Author Author2 = new Author("Anna Palonais", "2.2.2020", new Literature.Book("Taivas rajana","Tatti Tavallinen",55,"kauhu")); // luodaan myös uusi kirja
+            Console.WriteLine(Author1.AuthorInfo());
+            Console.WriteLine(Author2.AuthorInfo());
 
             Console.ReadKey();
 
-           
         }
     }
 }
