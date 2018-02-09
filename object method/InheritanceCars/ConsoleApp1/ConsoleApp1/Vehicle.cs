@@ -5,7 +5,7 @@ using System.Text;
 namespace CarTask
 
 {
-    class Vehicle
+     abstract class Vehicle
     {
         protected string Type;
         protected string Model;

@@ -4,21 +4,31 @@ using System.Text;
 
 namespace CarTask
 {
+
     class Cars : Vehicle
     {
         protected int EngineSize;
         protected int EngineModel;
         protected int DoorCount;
 
-        public Cars() :base()
+        public Cars()
         {
             EngineSize = 15;
             EngineModel = 20;
             DoorCount = 5;
 
         }
-        public Cars(int engineSize, int engineModel, int doorCount) :base()
+
+        public Cars(string type, string model, int year, int price) : base(type, model, year, price)
         {
+        }
+
+        public Cars(string type, string model, int year, int price, int engineSize, int engineModel, int doorCount)
+        {
+            Type = type;
+            Model = model;
+            Year = year;
+            Price = price;
             EngineSize = engineSize;
             EngineModel = engineModel;
             DoorCount = doorCount;
@@ -26,8 +36,12 @@ namespace CarTask
         }
         public override string VehicleInfo()
         {
-            base.VehicleInfo();
-            return $"Moottorin koko: {EngineSize}, moottorin merkki: {EngineModel},ovien lkm: {DoorCount} kpl.";
+           return $"{base.VehicleInfo()} Moottorin koko: {EngineSize}, moottorin merkki: {EngineModel},ovien lkm: {DoorCount} kpl.";
         }
+
+
+
+
+
     }
 }
