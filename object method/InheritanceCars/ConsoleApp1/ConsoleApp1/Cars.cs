@@ -36,10 +36,14 @@ namespace CarTask
         }
         public override string VehicleInfo()
         {
-           return $"{base.VehicleInfo()} Moottorin koko: {EngineSize}, moottorin merkki: {EngineModel},ovien lkm: {DoorCount} kpl.";
+            return $"{base.VehicleInfo()} Moottorin koko: {EngineSize}\n" +
+                 $"Moottorin merkki: {EngineModel}\n" +
+                 $"Ovien lkm: {DoorCount} kpl \n" +
+                 $"---------------------";
+
         }
 
-    
+        //ToString()- ja Equals(obj, obj}-metodit
         public override string ToString()
         {
             return ($"\n{EngineSize}\n{EngineModel}\n{DoorCount}\n");

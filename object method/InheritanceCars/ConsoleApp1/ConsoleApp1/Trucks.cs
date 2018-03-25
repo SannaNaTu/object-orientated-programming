@@ -25,7 +25,8 @@ namespace CarTask
         }
         public string CountDiesel()
         {
-            return $"Kulutus on:{loadWeight * dieselPerKg}";
+            return $"Kulutus on:{loadWeight * dieselPerKg} \n" +
+                    $"---------------------";
         }
 
         public new string VehicleInfo()

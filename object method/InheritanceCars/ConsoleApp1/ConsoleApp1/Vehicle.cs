@@ -28,7 +28,10 @@ namespace CarTask
         }
         public virtual string VehicleInfo()
         {
-            return $"Tyyppi: {Type}, merkki: {Model},vuosimalli: {Year} ja hinta: {Price}€";
+            return $"Tyyppi: {Type}\n" +
+                $"Merkki: {Model}\n" +
+                $"Vuosimalli: {Year}\n" +
+                $"Hinta: {Price}€";
         }
     }
 }

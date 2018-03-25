@@ -10,9 +10,10 @@ namespace CarTask
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Vehicle vehicle1 = new Cars();
 
+
             Console.WriteLine(vehicle1.VehicleInfo());
 
-            Cars cars1 = new Cars();
+            Cars cars1 = new Cars("Nissan","Sunny",1845,65000,34,1234,2);
             Console.WriteLine(cars1.VehicleInfo());
             //vehicle1.VehicleInfo();
             //cars1.VehicleInfo();
@@ -29,9 +30,9 @@ namespace CarTask
 
             Trucks truck2 = (Trucks)car2;
             Console.WriteLine(truck2.VehicleInfo());
-
+            Console.WriteLine("To.String-testi");
             Console.WriteLine(car2.ToString());
-
+            Console.WriteLine("Equals(obj, obj}-metodit");  
             Console.WriteLine(cars1.Equals(cars1));
             Console.WriteLine(cars1.Equals(car2));
 
