@@ -39,6 +39,20 @@ namespace CarTask
            return $"{base.VehicleInfo()} Moottorin koko: {EngineSize}, moottorin merkki: {EngineModel},ovien lkm: {DoorCount} kpl.";
         }
 
+    
+        public override string ToString()
+        {
+            return ($"\n{EngineSize}\n{EngineModel}\n{DoorCount}\n");
+        }
+        public override bool Equals(object obj)
+        {
+            Cars carObj = obj as Cars;
+            if (carObj == null)
+                return false;
+            else
+                return Model.Equals(carObj.Model);
+        }
+
 
 
 

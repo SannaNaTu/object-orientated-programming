@@ -30,6 +30,11 @@ namespace CarTask
             Trucks truck2 = (Trucks)car2;
             Console.WriteLine(truck2.VehicleInfo());
 
+            Console.WriteLine(car2.ToString());
+
+            Console.WriteLine(cars1.Equals(cars1));
+            Console.WriteLine(cars1.Equals(car2));
+
             Console.ReadKey();
         }
     }
