@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace TaskBankApp
 {
@@ -40,4 +41,13 @@ namespace TaskBankApp
                     where account.AccountNumber == accountNumber
                     select account).FirstOrDefault().Balance;
         }
+
+        public List<Transaction> GetTransactionsForCustomerForTimeSpan(string accountNumber, DateTime startTime, DateTime endTime)
+        {
+            return (from account in _accounts
+            where account.AccountNumber == accountNumber
+            select account).FirstOrDefault().GetTransactionsForTimeSpan(startTime, endTime);
+        }
+    }
 }
+

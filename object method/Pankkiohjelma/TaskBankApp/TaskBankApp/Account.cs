@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace TaskBankApp
 {
@@ -40,17 +41,26 @@ namespace TaskBankApp
             bool res = false;
 
             _transactions.Add(transaction);
-            double balanceBeforeTransaction = _balance;
+            double balanceBeforeTransaction = Balance;
             if (_transactions.Last().Equals(transaction))
             {
-                _balance += transaction.Sum;
+                Balance += transaction.Sum;
             }
-            if (_balance - transaction.Sum == balanceBeforeTransaction)
+            if (Balance - transaction.Sum == balanceBeforeTransaction)
             {
                 res = true;
             }
             return res;
         }
+        public List<Transaction> GetTransactionsForTimeSpan(DateTime startTime, DateTime endTime)
+        {
+            List<Transaction> res = (from transaction in _transactions
+                                     where transaction.Timestamp >= startTime && transaction.Timestamp <= endTime
+                                     orderby transaction.Timestamp
+                                     select transaction).ToList();
+            return res;
+
+        }
     }
-    }
+    
 }

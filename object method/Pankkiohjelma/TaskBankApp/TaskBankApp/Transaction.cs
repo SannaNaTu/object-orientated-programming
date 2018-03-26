@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace TaskBankApp
 {
@@ -12,7 +13,7 @@ namespace TaskBankApp
         public Transaction(double sum, DateTime timestamp)
         {
             _sum = sum;
-            _timestamp = timestamp;
+            Timestamp = timestamp;
         }
 
         public double Sum
@@ -20,5 +21,6 @@ namespace TaskBankApp
             get => _sum;
             set => _sum = value;
         }
+        public DateTime Timestamp { get => _timestamp; set => _timestamp = value; }
     }
 }
