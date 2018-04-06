@@ -21,7 +21,26 @@ namespace InterfaceTask
             Console.WriteLine(product[0].GetProduct("Tuote1"));
             Console.WriteLine(product[0].CountValue());
 
+            List<Customer> customers = new List<Customer>();
+            customers.Add(new Customer("Santeri", 1200));
+            customers.Add(new Customer("Salli", 200));
+            customers.Add(new Customer("Sieppo", 800));
+
+            customers[0].GetCustomer();
+            customers[0].CountBonus();
+            customers[1].GetCustomer();
+            customers[1].CountBonus();
+            customers[2].GetCustomer();
+            customers[2].CountBonus();
+
+            Store store = new Store("Pikkukauppa", 8000);
+            store.AddCustomer(new Customer("Kyllikki",2000));
+            store.AddProducts(new Product("Kynä",200,200));
+            store.PrintCustomers();
+            store.PrintProducts();
+            Console.ReadKey();
         }
+        //en oo varma tekeekö kaiken mitä piti, mut aika paljon kaikenlaista
         
     }
 }

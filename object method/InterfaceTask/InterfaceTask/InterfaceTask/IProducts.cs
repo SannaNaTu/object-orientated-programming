@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskProductInterface
+namespace InterfaceTask
 {
     interface IProducts
     {
-        void AddProducts(List<Product> product);
+        void AddProducts(Product product);
         void PrintProducts();
     }
 }

@@ -32,16 +32,16 @@ namespace InterfaceTask
 
             if (name == Name)
             {
-                Console.WriteLine($"{name} löytyi! ");
+                return $"{name} löytyi! ";
             }
             else
                 return null;
         }
 
-        public void CountValue()
+        public  double CountValue()
         {
-            double Total = Price * Count;
-            Console.WriteLine($"Ostosten yhteisarvo on: {Total}");
+
+            return Price * Count;
         }
     }
 }
